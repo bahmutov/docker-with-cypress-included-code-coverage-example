@@ -1,0 +1,24 @@
+{
+  "name": "docker-with-cypress-included-code-coverage-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel server index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/docker-with-cypress-included-code-coverage-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/docker-with-cypress-included-code-coverage-example/issues"
+  },
+  "homepage": "https://github.com/bahmutov/docker-with-cypress-included-code-coverage-example#readme",
+  "devDependencies": {
+    "parcel-bundler": "1.12.4"
+  }
+}
