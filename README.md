@@ -28,9 +28,10 @@ $ DEBUG=code-coverage ./run-cypress.sh
 
 Note that the summary numbers (number of lines, functions, branches covered) are still correct.
 
-**Solution:** generate HTML report after exiting from the container. Code coverage plugin has `nyc` as a dependency, so it should be available.
+**Solution:** generate HTML report _after exiting_ from the container (yourself). Code coverage plugin has `nyc` as a dependency, so it should be available.
 
 ```sh
+# generate HTML report
 $ npx nyc report --reporter=lcov
 # see just the coverage summary
 $ npx nyc report --reporter=text-summary
