@@ -1,4 +1,4 @@
 it('loads the page', () => {
-  cy.visit('http://localhost:1234')
+  cy.visit('index.html')
   cy.contains('Hello')
 })
