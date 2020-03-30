@@ -1,4 +1,5 @@
-# docker-with-cypress-included-code-coverage-example
+# docker-with-cypress-included-code-coverage-example [![CI status](https://github.com/bahmutov/docker-with-cypress-included-code-coverage-example/workflows/test/badge.svg?branch=master)](https://github.com/bahmutov/docker-with-cypress-included-code-coverage-example/actions)
+
 
 Cypress Docker images with Cypress pre-installed globally at [cypress-docker-images](https://github.com/cypress-io/cypress-docker-images/tree/master/included)
 
