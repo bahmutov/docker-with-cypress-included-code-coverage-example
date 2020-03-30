@@ -1,0 +1,14 @@
+name: test
+on: push
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code 🛎
+        uses: actions/checkout@v2
+      - name: install NPM dependencies 📦
+        uses: bahmutov/npm-install@v1
+      - name: run tests 🧪
+        env:
+          DEBUG: code-coverage
+        run: ./run-cypress.sh
