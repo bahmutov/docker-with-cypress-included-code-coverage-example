@@ -1,7 +1,7 @@
 name: test
 on: push
 jobs:
-  scrape:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: check out code 🛎
@@ -9,6 +9,7 @@ jobs:
       - name: install NPM dependencies 📦
         uses: bahmutov/npm-install@v1
       - name: run tests 🧪
-        env:
-          DEBUG: code-coverage
-        run: ./run-cypress.sh
+        run: |
+          docker run -v $PWD:/e2e -w /e2e \
+          -e DEBUG=code-coverage \
+          cypress/included:4.2.0
