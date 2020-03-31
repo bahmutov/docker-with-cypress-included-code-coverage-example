@@ -12,18 +12,13 @@ jobs:
       - name: show current user 🧑‍💻
         run: whoami && id
 
-      # if the runner does not own the coverage reports
-      # created inside the Docker image, reporting breaks
-      # thus try to run it as a non-root user "node"
       - name: run tests 🧪
         run: |
           docker run -v $PWD:/e2e -w /e2e \
-          --user node \
           -e DEBUG=code-coverage \
-          --entrypoint=/bin/sh \
-          cypress/included:4.2.0 id
+          cypress/included:4.2.0
       - name: show owner for created files 👤
-        run: cat ./.nyc_output/out.json
+        run: ls -la . .nyc_output coverage
       - name: show coverage JSON 🖨
         run: cat ./.nyc_output/out.json
       - name: check coverage for all files 📈
