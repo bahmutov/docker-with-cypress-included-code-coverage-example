@@ -20,7 +20,8 @@ jobs:
           docker run -v $PWD:/e2e -w /e2e \
           --user node \
           -e DEBUG=code-coverage \
-          cypress/included:4.2.0
+          --entrypoint=/bin/sh \
+          cypress/included:4.2.0 id
       - name: show owner for created files 👤
         run: cat ./.nyc_output/out.json
       - name: show coverage JSON 🖨
