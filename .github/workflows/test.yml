@@ -21,6 +21,8 @@ jobs:
         run: ls -la . .nyc_output coverage
       - name: show coverage JSON 🖨
         run: cat ./.nyc_output/out.json
+      - name: change owner of .nyc_output 📁
+        run: chown -R runner .nyc_output
       - name: check coverage for all files 📈
         run: npx nyc report --reporter=text --check-coverage --lines 100
       - name: check coverage for single file 📉
