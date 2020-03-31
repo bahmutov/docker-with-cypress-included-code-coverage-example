@@ -12,8 +12,15 @@ jobs:
         run: |
           docker run -v $PWD:/e2e -w /e2e \
           -e DEBUG=code-coverage \
+          --user 1001 \
           cypress/included:4.2.0
+      # if the runner does not own the coverage reports
+      # created inside the Docker image, reporting breaks
+      - name: show owner for created files 👤
+        run: cat ./.nyc_output/out.json
       - name: show coverage JSON 🖨
         run: cat ./.nyc_output/out.json
-      - name: check coverage 📈
+      - name: check coverage for all files 📈
         run: npx nyc report --reporter=text --check-coverage --lines 100
+      - name: check coverage for single file 📉
+        run: npx nyc report --reporter=text --check-coverage --lines 100 --include main.js
