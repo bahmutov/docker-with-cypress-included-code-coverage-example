@@ -9,6 +9,9 @@ jobs:
       - name: install NPM dependencies 📦
         uses: bahmutov/npm-install@v1
 
+      - name: show current user 🧑‍💻
+        run: whoami && id
+
       # if the runner does not own the coverage reports
       # created inside the Docker image, reporting breaks
       # thus try to run it as a non-root user "node"
